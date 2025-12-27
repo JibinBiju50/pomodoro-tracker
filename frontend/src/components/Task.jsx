@@ -21,7 +21,7 @@ export default function Task() {
   }
   
   // to remove task from array
-  const removeTask = (index)=> {
+  const removeTask = (index) => {
     setAllTask(prev => {return prev.filter((task, i) => i !== index)} 
     )
   }

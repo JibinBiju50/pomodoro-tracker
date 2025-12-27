@@ -1,12 +1,64 @@
-# React + Vite
+# Pomodoro Timer & Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend-only web application for implementing the Pomodoro Technique with integrated task management. Timer and task data persist in browser localStorage.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** 19.1.1
+- **Vite** 7.1.0
+- **Tailwind CSS** 4.1.11
+- **ESLint** 9.32.0
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Timer modes**: Pomodoro (25 min), Short Break (5 min), Long Break (15 min)
+- **Custom timer duration**: Set custom minutes and seconds
+- **Timer controls**: Start, pause, and reset
+- **Task management**: Add and remove tasks
+- **Task persistence**: Tasks saved to browser localStorage
+- **Task completion**: Checkbox to mark tasks as complete
+
+## Local Setup
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start development server:
+```bash
+npm run dev
+```
+
+3. Build for production:
+```bash
+npm run build
+```
+
+4. Preview production build:
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Timer.jsx      # Pomodoro timer component
+│   │   └── Task.jsx       # Task management component
+│   ├── pages/
+│   │   └── Home.jsx       # Main page layout
+│   ├── css/
+│   │   └── timer.css      # Timer-specific styles
+│   ├── App.jsx            # Root component
+│   └── main.jsx           # Application entry point
+├── public/                # Static assets
+├── package.json
+└── vite.config.js
+```
+
+## Author
+
+[Jibin Biju]
