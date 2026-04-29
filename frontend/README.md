@@ -61,4 +61,4 @@ frontend/
 
 ## Author
 
-[Jibin Biju]
+Jibin Biju
