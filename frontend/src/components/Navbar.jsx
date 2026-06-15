@@ -15,7 +15,7 @@ export default function Navbar(){
                 const data = await authService.getAuthStatus();
                 setIsAuthenticated(data.isAuthenticated);
                 setUser(data.user);
-            } catch (err) {
+            } catch {
                 setIsAuthenticated(false);
             }
         };

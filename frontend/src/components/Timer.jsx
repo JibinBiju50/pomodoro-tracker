@@ -1,5 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { taskService, authService } from "../service/service";
+
+const TIMER_MODES = {
+  pomodoro: 1500,
+  shortBreak: 300,
+  longBreak: 900,
+};
 
 export default function Timer() {
   const [mode, setMode] = useState("pomodoro"); 
@@ -15,13 +21,6 @@ export default function Timer() {
   const [selectedTask, setSelectedTask] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pomodoroCompleted, setPomodoroCompleted] = useState(false);
-
-  // Mode times
-  const times = {
-    pomodoro: 1500,
-    shortBreak: 300,
-    longBreak: 900,
-  };
 
   // Fetch tasks on mount
   useEffect(() => {
@@ -50,7 +49,7 @@ export default function Timer() {
     return () => {
       window.removeEventListener('user-logged-out', handleLogoutReset);
     };
-  }, []);
+  }, [resetTimer]);
 
   // Sets time
   const setTime = () => {
@@ -110,16 +109,16 @@ export default function Timer() {
   };
 
   // Reset timer
-    const resetTimer = React.useCallback(() => {
-      clearInterval(Ref.current);
-      setIsRunning(false);
-      setTimeLeft(times[mode]);
-    }, [mode, times]);
+  const resetTimer = useCallback(() => {
+    clearInterval(Ref.current);
+    setIsRunning(false);
+    setTimeLeft(TIMER_MODES[mode]);
+  }, [mode]);
 
   // Change mode
   const changeMode = (newMode) => {
     setMode(newMode);
-    setTimeLeft(times[newMode]);
+    setTimeLeft(TIMER_MODES[newMode]);
     clearInterval(Ref.current);
     setIsRunning(false);
   };
