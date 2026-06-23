@@ -41,7 +41,7 @@ export default function Navbar(){
         <nav className='w-full px-6 py-6 flex flex-col sm:flex-row justify-between items-center bg-gray-800 gap-2 sm:gap-0'>
             <div className='w-full sm:w-auto flex justify-between items-center'>
                 <Link to='/'>
-                    <h1 className='text-white text-xl sm:text-2xl md:text-3xl font-bold hover:text-gray-300 transition-colors text-center'>Pomodoro App</h1>
+                    <h1 className='text-white text-xl sm:text-2xl md:text-3xl font-bold hover:text-gray-300 transition-colors text-center'>Pomexa</h1>
                 </Link>
                 {/* Hamburger button for mobile */}
                 <button
