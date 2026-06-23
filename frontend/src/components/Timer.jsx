@@ -21,7 +21,13 @@ export default function Timer() {
   const [selectedTask, setSelectedTask] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pomodoroCompleted, setPomodoroCompleted] = useState(false);
-
+  // Reset timer
+  const resetTimer = useCallback(() => {
+    clearInterval(Ref.current);
+    setIsRunning(false);
+    setTimeLeft(TIMER_MODES[mode]);
+  }, [mode]);
+  
   // Fetch tasks on mount
   useEffect(() => {
     const fetchTasks = async () => {
@@ -108,12 +114,7 @@ export default function Timer() {
     setIsRunning(false);
   };
 
-  // Reset timer
-  const resetTimer = useCallback(() => {
-    clearInterval(Ref.current);
-    setIsRunning(false);
-    setTimeLeft(TIMER_MODES[mode]);
-  }, [mode]);
+
 
   // Change mode
   const changeMode = (newMode) => {
