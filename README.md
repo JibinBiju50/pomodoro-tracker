@@ -2,7 +2,7 @@
 
 A full-stack productivity web app that combines a Pomodoro timer with task management. Track focused work sessions, associate them with tasks, and monitor productivity — all with a responsive, modern UI.
 
-## Live url: [https://pomexa.netlify.app/](https://pomexa.netlify.app/)
+### Live url: [https://pomexa.netlify.app/](https://pomexa.netlify.app/)
 
 ## Tech Stack
 
